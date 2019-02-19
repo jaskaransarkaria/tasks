@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task 4</title>
+  </head>
+  <body>
+    <input id="userInput" /><button id="addToList" onclick="addUserInput()">
+      Add to list
+    </button>
+    <ul id="addToThisList"></ul>
+    <button onclick="sortList()">Sort</button>
+    <input id="searchInput" /><button onclick="search()">Search</button>
+    <button id="countVowels" onclick="countVowels()">
+      Count the words containing a vowel</button
+    ><span id="spanCount">0</span>
+    <script>
+      let list = [
+        "apple",
+        "banana",
+        "clementine",
+        "date",
+        "eggplant",
+        "fennel",
+        "grapes",
+        "horseradish"
+      ];
+
+      let addListToList = list => {
+        for (let item of list) {
+          let addToThisList = document.getElementById("addToThisList");
+          var node = document.createElement("LI"); // Create a <li> node
+          var textnode = document.createTextNode(`${item}`); // Create a text node
+          node.appendChild(textnode); // Append the text to <li>
+          addToThisList.appendChild(node);
+        } // Append <li> to <ul> with id="myList"
+        return;
+      };
+      addListToList(list);
+
+      let addUserInput = () => {
+        let userInput = document.getElementById("userInput");
+        let addToThisList = document.getElementById("addToThisList");
+
+        var node = document.createElement("LI"); // Create a <li> node
+        var textnode = document.createTextNode(`${userInput.value}`); // Create a text node
+        node.appendChild(textnode); // Append the text to <li>
+        addToThisList.appendChild(node); // Append <li> to <ul> with id="myList"
+        return;
+      };
+
+      let sortList = () => {
+        // access all the bullet points
+        // returns a node list
+        let bulletList = document
+          .getElementById("addToThisList")
+          .getElementsByTagName("LI");
+        let bulletListIntoArray = Array.from(bulletList);
+        // add to an array
+        //sort
+        // delete all the li's
+        console.log(bulletListIntoArray); // returning a list of lists
+        let newBulletList = [];
+        for (let item of bulletListIntoArray) {
+          {
+            subitem = item.innerText;
+            newBulletList.push(subitem);
+          }
+        }
+
+        var addToThisList = document.getElementById("addToThisList");
+        addToThisList.innerHTML = "";
+        console.log(newBulletList);
+        //re add the bullet points back?
+        addListToList(newBulletList.sort());
+        return;
+      };
+
+      let search = () => {
+        // filter list based on search
+        // get list
+        let bulletList = document
+          .getElementById("addToThisList")
+          .getElementsByTagName("LI");
+        let bulletListIntoArray = Array.from(bulletList);
+
+        let newBulletList = [];
+        for (let item of bulletListIntoArray) {
+          {
+            subitem = item.innerText;
+            newBulletList.push(subitem);
+          }
+        }
+
+        var addToThisList = document.getElementById("addToThisList");
+        console.log(newBulletList);
+
+        // filter list against search input
+        var searchInput = document.getElementById("searchInput");
+
+        let searchList = item => {
+          return item.includes(searchInput.value);
+        };
+        console.log(searchList);
+        console.log(newBulletList);
+        let filterList = newBulletList.filter(searchList);
+        console.log(newBulletList);
+        console.log(filterList);
+        addToThisList.innerHTML = "";
+        addListToList(filterList);
+      };
+
+      let countVowels = () => {
+        const vowels = ["a", "e", "i", "o", "u"];
+        let bulletList = document
+          .getElementById("addToThisList")
+          .getElementsByTagName("LI");
+        let bulletListIntoArray = Array.from(bulletList);
+
+        let newBulletList = [];
+        for (let item of bulletListIntoArray) {
+          {
+            subitem = item.innerText;
+            newBulletList.push(subitem);
+          }
+        }
+        console.log("newBulletlist", newBulletList);
+
+        // filter list against search input
+
+        let searchList = (item, searchForItem) => {
+          vowelContainingArray = [];
+          for (let i of item) {
+            for (let vowel of searchForItem) {
+              if (i.includes(vowel)) {
+                vowelContainingArray.push(i);
+              }
+            }
+          }
+          console.log("item", item);
+          uniqArray = [...new Set(vowelContainingArray)];
+          return uniqArray.length; // removes duplicates
+        };
+
+        let spanCount = document.getElementById("spanCount");
+        spanCount.innerText = `${searchList(newBulletList, vowels)}`;
+      };
+      /*
+        First, link the "Add..." to functionality so that any user input
+        can be added to the list
+
+        1. Show the list in the ul tag as separate items
+
+        2. On pressing the Sort button, the list should sort and refresh the view
+
+        3. On pressing search, the phrase entered in the input field
+        should be used to filter the list, leaving only matching items
+          3a. Bonus points if you can make this not a complete match
+          (i.e. typing 'ap' will leave 'apple')
+
+
+        4. Pressing the "count..." button should show the number
+        of words that contain a vowel
+       */
+    </script>
+  </body>
+</html>

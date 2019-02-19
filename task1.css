@@ -1,0 +1,155 @@
+/* Put your css in here, and don't forget to link this to the .html file */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: dodgerblue;
+}
+
+#container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border: 2px solid black;
+  height: 50vh;
+  z-index: 0;
+}
+
+#head {
+  background: lightgray;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 2% 2% 2% 4.5%;
+  border-radius: 50%;
+  z-index: 5;
+}
+#head2 {
+  background: lightgray;
+  position: absolute;
+  top: 0%;
+  left: -1%;
+  width: 200px;
+  height: 200px;
+  margin: 2% 2% 2% 4.5%;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.eyeBall {
+  background: white;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  z-index: 6;
+}
+
+#leftEye {
+  position: relative;
+  left: 22.5%;
+  top: -12.5%;
+  z-index: 7;
+}
+
+#rightEye {
+  position: relative;
+  left: 47.5%;
+  top: 20%;
+  z-index: 7;
+}
+
+.pupil {
+  position: absolute;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background: black;
+}
+
+#rightPupil {
+  left: 35%;
+  top: 32.5%;
+  z-index: 8;
+}
+
+#leftPupil {
+  left: 35%;
+  top: 32.5%;
+  z-index: 8;
+}
+
+#nose {
+  position: absolute;
+  left: 40%;
+  top: 42.5%;
+  border-radius: 30%;
+  width: 50px;
+  height: 80px;
+  background: saddlebrown;
+  z-index: 9;
+}
+
+.roundedNose {
+  position: absolute;
+  background: saddlebrown;
+  border-radius: 50%;
+  width: 50px;
+  height: 40px;
+  z-index: 9;
+}
+
+#topNose {
+  position: absolute;
+  top: -5%;
+  z-index: 10;
+}
+
+#bottomNose {
+  position: absolute;
+  top: 52.5%;
+  z-index: 10;
+}
+
+.ear {
+  height: 125px;
+  width: 125px;
+  border-radius: 50%;
+  background: lightgray;
+  z-index: 1;
+}
+
+#rightEar {
+  position: relative;
+  top: -124%;
+  left: 65%;
+}
+
+#leftEar {
+  position: relative;
+  left: -20%;
+  top: -60%;
+}
+
+.innerEar {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background: gray;
+}
+
+#rightInnerEar {
+  position: absolute;
+  left: 8%;
+  top: 12%;
+  z-index: 0;
+}
+
+#leftInnerEar {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  z-index: 0;
+}

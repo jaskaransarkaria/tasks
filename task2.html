@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task 2</title>
+  </head>
+  <body>
+    <script>
+      var divElem = document.createElement("div");
+      divElem.setAttribute("id", "content");
+
+      var h1Elem = document.createElement("h1");
+      h1Elem.setAttribute("h1", "h1Elem");
+      h1Elem.innerText = "School of Code";
+
+      divElem.appendChild(h1Elem);
+
+      imgElem = document.createElement("img");
+      imgElem.setAttribute(
+        "src",
+        "https://images.pexels.com/photos/5149/easter-eggs.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+      );
+
+      document.body.appendChild(divElem);
+      document.body.appendChild(imgElem);
+      /* Using purely JavaScript:
+      
+       1. create a div with an id of 'content'
+       2. create a h1 tag with the text `School of Code`
+         a. this is a child of the #content div
+       3. create an image, and make the source ' https://images.pexels.com/photos/5149/easter-eggs.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+    */
+    </script>
+  </body>
+</html>
